@@ -22,6 +22,9 @@ describe('Main component', () => {
         expect(newTransition).toContainElement(extractItem);
     });
 
+    // A consulta está sendo realizada utilizando a query findByText() que
+    // aguarda o elemento aparecer na tela. Só que ao utilizá-la é preciso tornar
+    // o teste assíncrono e aguardar o elemento aparecer no dom. Por isso o uso do async e await
     test('If navigation between pages occurs after clicking', async () => {
         render(<AppRoutes />, {wrapper: BrowserRouter});
 
