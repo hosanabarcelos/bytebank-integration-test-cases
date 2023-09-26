@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter, MemoryRouter, Routes, Route } from 'react-router-dom';
 import App from './paginas/Principal/App';
+import AppRoutes from './routes';
 import Cartoes from './componentes/Cartoes'
 
 describe('Routes', () => {
@@ -38,5 +39,18 @@ describe('Routes', () => {
 
     const location = screen.getByTestId('local');
     expect(location).toHaveTextContent(route);
+  });
+
+  test('If the 404 page was rendered', () => {
+    const route = '/extrato';
+
+    render(
+        <MemoryRouter initialEntries={[route]}>
+            <AppRoutes />
+        </MemoryRouter>
+    );
+
+    const errorPage = screen.getByTestId('pagina-404');
+    expect(errorPage).toContainHTML('<h1>Ops! Não encontramos a página</h1>');
   });
 });
