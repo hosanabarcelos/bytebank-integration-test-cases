@@ -13,11 +13,11 @@ const mockTransaction = [
     }
 ];
 
-const mockRequest = (retorn) => {
+const mockRequest = (returnData) => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
-          data: retorn,
+          data: returnData,
         });
       }, 200);
     });
