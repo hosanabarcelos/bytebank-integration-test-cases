@@ -36,6 +36,11 @@ export default function App() {
             <Transacao realizarTransacao={realizarTransacao} />
           )}
           <Outlet />
+        <noscript
+            data-testid = "local"
+        >
+            { location.pathname }
+        </noscript>
         </div>
         <Extrato transacoes={transacoes} />
       </main>
