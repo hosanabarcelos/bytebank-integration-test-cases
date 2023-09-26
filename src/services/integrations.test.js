@@ -23,6 +23,14 @@ const mockRequest = (returnData) => {
     });
 };
 
+const mockErrorRequest = (returnData) => {
+    return new Promise((_,reject) => {
+      setTimeout(() => {
+          reject();
+      }, 200);
+    });
+};
+
 describe('API Request', () => {
     test('If the list of transactions was returned', async () => {
       api.get.mockImplementation(() => mockRequest(mockTransaction));
@@ -32,4 +40,13 @@ describe('API Request', () => {
       expect(transacoes).toEqual(mockTransaction);
       expect(api.get).toHaveBeenCalledWith('/transacoes');
     });
+
+    test('If the empty list was returned when the request fail', async () => {
+        api.get.mockImplementation(() => mockErrorRequest());
+
+        const transacoes = await buscaTransacoes();
+
+        expect(transacoes).toEqual([]);
+        expect(api.get).toHaveBeenCalledWith('/transacoes');
+      });
 });
