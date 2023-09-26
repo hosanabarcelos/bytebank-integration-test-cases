@@ -26,4 +26,17 @@ describe('Routes', () => {
     const mycards = screen.getByText('Meus cartões');
     expect(mycards).toHaveTextContent('Meus cartões');
   });
+
+  test('If the current route location was rendered', () => {
+    const route = '/cartoes';
+
+    render(
+        <MemoryRouter initialEntries={[route]}>
+            <App />
+        </MemoryRouter>
+    );
+
+    const location = screen.getByTestId('local');
+    expect(location).toHaveTextContent(route);
+  });
 });
