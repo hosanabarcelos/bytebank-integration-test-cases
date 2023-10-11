@@ -2,28 +2,28 @@
     Bytebank
 </h1>
 
-Bytebank is a digital bank that requires integration testing of its components and pages. <br />
-With **course 02** of the automated testing training, I obtained all the knowledge present in the content below.
+Bytebank é um banco digital que precisa de testes de integração em seus componentes e páginas. <br />
+Com o **curso 02** da formação de testes automatizados, obtive todo o conhecimento presente no conteúdo abaixo:
 
- ## 📚 Learnings
+ ## 📚 Conhecimentos
 
-Learnings acquired during development:
-- Route test;
-- BrowserRouter and MemoryRouter;
-- About react-router-dom hooks for testing components;
-- How to write integration tests between two components;
-- On-screen element queries;
-- Integration tests between Front-end and Back-end;
-- Mocks api return;
-- Tests for requests in cases of success and failure;
+Conhecimentos adquiridos durante o desenvolvimento:
+- Testes de rotas;
+- BrowserRouter e MemoryRouter;
+- React-router-dom e seus hooks para testar componentes;
+- Como escrever testes de integração entre dois componentes;
+- Consultas de elementos na tela;
+- Testes de integração entre Front-end e Back-end;
+- Mocks de retorno de api;
+- Testes para requisições em casos de sucesso e erro;
 - RenderHook;
-- About _act_ to handle state changes in tests;
-- Test coverage.
+-  _act_ to para lidar com mudanças de estado em testes;
+- Cobertura de testes.
 
   
- ## 🛠️ Technologies
+ ## 🛠️ Tecnologias
 
-Technologies used in development:
+Tecnologias usadas durante o desenvolvimento:
 
 - [React](https://react.dev/)
 - [Jest](https://jestjs.io/pt-BR/)
@@ -31,19 +31,19 @@ Technologies used in development:
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 
-## ⚙️ Setting
+## ⚙️ Como testar?
 
-Cloning the project:
+Clonando o projeto:
 ```bash
 $ git clone https://github.com/hosanabarcelos/bytebank-integration-tests.git
 ```
 
-Run:
+Rodando:
 ``` bash
-# installing the dependencies
+# Instale as dependências:
 $ npm install
 
-# running the tests
+# Rode os testes:
 $ npm run test:coverage
 ```
 ---
